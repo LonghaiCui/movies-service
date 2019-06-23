@@ -1,0 +1,29 @@
+//    public static void main(String[] args) {
+//        SpringApplication.run(MoviesServiceApplication.class, args);
+//    }
+//
+//    @Override
+//    public void run(String... args) throws Exception {
+//
+//        DataLoader dl = new DataLoader();
+//
+//        List<Movie> movies = dl.readAllExample();
+//
+//        //db.movie.createIndex( { title: 1, director: 1 }, { unique: true } )
+//        movies.stream()
+//                .forEach(movie -> {
+//                    try {
+//                        repository.save(movie);
+//                    } catch (DuplicateKeyException ex) {
+//                        System.out.println("duplicate found -> " + movie);
+//                    }
+//                });
+//
+//        List<Movie> all = repository.findAll();
+//
+//        for (Movie movie : all) {
+//            System.out.println(movie);
+//        }
+//
+//        System.out.println("There are records -> " + all.size());
+//    }

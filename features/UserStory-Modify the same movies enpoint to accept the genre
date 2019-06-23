@@ -1,0 +1,24 @@
+As a client to the movies service
+I want to be able to search the movies by genre from the same /movies endpoint
+so that get the movie list of specific genre
+
+AC1
+Given a GET request is received in /movies endpoint
+When the query parameter genre is present and not null
+Then the service should return the movie list in that genre
+
+AC2
+Given a GET request is received in /movies endpoint
+When the query parameter genre is missing or null
+Then the service should return the movie list in all genres
+
+
+sample request payload:
+{
+   ...
+}
+
+sample response payload:
+{
+   ...
+}

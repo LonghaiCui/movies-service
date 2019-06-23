@@ -22,7 +22,6 @@ dependencies {
 	compile(
 			"org.springframework.boot:spring-boot-starter-data-mongodb",
 			"com.opencsv:opencsv:4.0",
-			"org.springframework.boot:spring-boot-starter-actuator",
 			"org.springframework.boot:spring-boot-starter-web",
 			"org.projectlombok:lombok"
 	)

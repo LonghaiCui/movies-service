@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URL;
@@ -16,12 +17,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static com.jayway.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MoviesServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
+@TestPropertySource(
+        locations = "classpath:application-local.yml")
 public class MoviesIntegrationTest {
     @Value("${local.server.port}")
     private int port;
@@ -69,7 +69,6 @@ public class MoviesIntegrationTest {
     @Test
     public void testSearchMoviesByYear_whenYearIsNotValid_thenReturn400() {
         Response getResponse = given()
-                .header("sessionId", "session123")
                 .when()
                 .contentType("application/json")
                 .param("year", 9999)
@@ -90,7 +89,6 @@ public class MoviesIntegrationTest {
     @Test
     public void testSearchMoviesByYear_whenQueryStringsAreValidFromAndTo_thenReturn400() {
         Response getResponse = given()
-                .header("sessionId", "session123")
                 .when()
                 .contentType("application/json")
                 .param("from", 2012)
@@ -112,7 +110,6 @@ public class MoviesIntegrationTest {
     @Test
     public void testSearchMoviesByYear_whenQueryStringsFromAndToAreNotValid_thenReturn400() {
         Response getResponse = given()
-                .header("sessionId", "session123")
                 .when()
                 .contentType("application/json")
                 .param("from", 1000)
@@ -132,7 +129,6 @@ public class MoviesIntegrationTest {
     @Test
     public void testSearchMoviesByYear_whenQueryStringsFromIsBiggerThanTo_thenReturn400() {
         Response getResponse = given()
-                .header("sessionId", "session123")
                 .when()
                 .contentType("application/json")
                 .param("from", 2020)
@@ -152,7 +148,6 @@ public class MoviesIntegrationTest {
     @Test
     public void testSearchMoviesByYear_whenOnlyFromIsPresent_thenReturn400() {
         Response getResponse = given()
-                .header("sessionId", "session123")
                 .when()
                 .contentType("application/json")
                 .param("from", 1000)
@@ -171,7 +166,6 @@ public class MoviesIntegrationTest {
     @Test
     public void testSearchMoviesByYear_whenYearIsMissing_thenReturnDefault2016() {
         Response getResponse = given()
-                .header("sessionId", "session123")
                 .when()
                 .contentType("application/json")
                 .get("/movies")

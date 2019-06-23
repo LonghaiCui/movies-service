@@ -16,7 +16,7 @@ AC3
 Given a GET request is received in /movies endpoint
 When the queryStrings are "from" and "to"
 And the values are valid ("from" is bigger than 1900 and "to" is smaller than 2100)
-Then the service should return the movie list in that year
+Then the service should return the movie list between that years
 
 AC4
 Given a GET request is received in /movies endpoint
