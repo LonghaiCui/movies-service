@@ -26,7 +26,8 @@ dependencies {
 			"org.springframework.boot:spring-boot-starter-web",
 			"org.projectlombok:lombok"
 	)
-	
+	testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+
 	testCompile(
 			"org.springframework.boot:spring-boot-starter-test"
 	)
