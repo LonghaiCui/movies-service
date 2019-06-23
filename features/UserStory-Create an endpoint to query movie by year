@@ -29,7 +29,12 @@ Given a GET request is received in /movies endpoint
 When only one of "from" and "to" is present
 Then the service should return error response with 400 status code
 
-AC5
+AC6
+Given a GET request is received in /movies endpoint
+When the queryStrings "from" is bigger than "to"
+Then the service should return error response with 400 status code
+
+AC7
 Given a GET request is received in /movies endpoint
 When the none of the queryString "year", "from" or "to" is present
 Then the service should return the movie lists in default year 2016
