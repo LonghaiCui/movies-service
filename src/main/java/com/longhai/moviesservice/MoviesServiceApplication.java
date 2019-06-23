@@ -5,10 +5,12 @@ import com.longhai.moviesservice.model.Movie;
 import com.longhai.moviesservice.processor.DataLoader;
 import com.longhai.moviesservice.repository.CustomerRepository;
 import com.longhai.moviesservice.repository.MovieRepository;
+import com.mongodb.MongoBulkWriteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.dao.DuplicateKeyException;
 
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -35,36 +37,22 @@ public class MoviesServiceApplication implements CommandLineRunner {
 
 		List<Movie> movies = dl.readAllExample();
 
-		mrepository.saveAll(movies);
+		//db.movie.createIndex( { title: 1, director: 1 }, { unique: true } )
+		movies.stream()
+				.forEach(movie -> {
+					try {
+						mrepository.save(movie);
+					} catch (DuplicateKeyException ex) {
+						System.out.println("duplicate found -> " + movie);
+					}
+				});
 
-		for (Movie movie : mrepository.findAll()) {
+		List<Movie> all = mrepository.findAll();
+
+		for (Movie movie : all) {
 			System.out.println(movie);
 		}
 
-//		repository.deleteAll();
-//
-//		// save a couple of customers
-//		repository.save(new Customer("Alice", "Smith"));
-//		repository.save(new Customer("Bob", "Smith"));
-//
-//		// fetch all customers
-//		System.out.println("Customers found with findAll():");
-//		System.out.println("-------------------------------");
-//		for (Customer customer : repository.findAll()) {
-//			System.out.println(customer);
-//		}
-//		System.out.println();
-//
-//		// fetch an individual customer
-//		System.out.println("Customer found with findByFirstName('Alice'):");
-//		System.out.println("--------------------------------");
-//		System.out.println(repository.findByFirstName("Alice"));
-//
-//		System.out.println("Customers found with findByLastName('Smith'):");
-//		System.out.println("--------------------------------");
-//		for (Customer customer : repository.findByLastName("Smith")) {
-//			System.out.println(customer);
-//		}
-
+		System.out.println("There are records -> " + all.size());
 	}
 }

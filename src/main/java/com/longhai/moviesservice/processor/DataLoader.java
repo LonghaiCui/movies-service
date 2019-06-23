@@ -45,7 +45,7 @@ public class DataLoader {
                                 .rating(Float.parseFloat(record[8]))
                                 .votes(Integer.parseInt(record[9]))
                                 .revenue("".equals(record[10]) ? null : Float.parseFloat(record[10]))
-                                .metascore("".equals(record[10]) ? null : Integer.parseInt(record[11]))
+                                .metascore("".equals(record[11]) ? null : Integer.parseInt(record[11]))
                                 .build())
                 .collect(toList());
 
@@ -67,7 +67,7 @@ public class DataLoader {
         System.out.println("=====================================!!!");
 
 
-        URL systemResource = getClass().getClassLoader().getResource("csv/movieList1.csv");
+        URL systemResource = getClass().getClassLoader().getResource("csv/IMDB-Movie-Data_Assignment.csv");
 
         URI uri = systemResource.toURI();
         Path path = Paths.get(uri);
