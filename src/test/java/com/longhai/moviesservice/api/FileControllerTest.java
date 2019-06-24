@@ -1,7 +1,6 @@
 package com.longhai.moviesservice.api;
 
 import com.longhai.moviesservice.processor.DataLoader;
-import com.longhai.moviesservice.processor.MoviesProcessor;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +14,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Collections;
 
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

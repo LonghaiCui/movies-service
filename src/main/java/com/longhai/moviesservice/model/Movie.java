@@ -1,5 +1,7 @@
 package com.longhai.moviesservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +14,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonIgnoreProperties(value = {
+        "id",
+        "director",
+        "actors",
+        "votes",
+        "revenue",
+        "metascore"
+})
+
 public class Movie {
     @Id
     private String id;

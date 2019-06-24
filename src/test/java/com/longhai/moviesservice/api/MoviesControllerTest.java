@@ -27,9 +27,6 @@ public class MoviesControllerTest {
     @Before
     public void setUp() throws Exception {
         mvc = MockMvcBuilders.standaloneSetup(new MoviesController(processor)).build();
-//        objectMapper = new ObjectMapper();
-//        jsonRequest = getJSON("/userRequest.json");
-//        user = objectMapper.readValue(jsonRequest, User.class);
     }
 
     @Test

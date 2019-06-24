@@ -23,7 +23,6 @@ sample response payload:
     ],
     "movies": [
         {
-            "id": "5d1016adba4a3f1a98c21a79",
             "title": "The Great Wall",
             "genre": [
                 "Action",
@@ -31,17 +30,11 @@ sample response payload:
                 "Fantasy"
             ],
             "description": "European mercenaries searching for black powder become embroiled in the defense of the Great Wall of China against a horde of monstrous creatures.",
-            "director": "Yimou Zhang",
-            "actors": "Matt Damon, Tian Jing, Willem Dafoe, Andy Lau",
             "year": 2016,
             "runtime": 103,
-            "rating": 6.1,
-            "votes": 56036,
-            "revenue": 45.13,
-            "metascore": 42
+            "rating": 6.1
         },
         {
-            "id": "5d1016adba4a3f1a98c21a78",
             "title": "Suicide Squad",
             "genre": [
                 "Action",
@@ -49,33 +42,21 @@ sample response payload:
                 "Fantasy"
             ],
             "description": "A secret government agency recruits some of the most dangerous incarcerated super-villains to form a defensive task force. Their first mission: save the world from the apocalypse.",
-            "director": "David Ayer",
-            "actors": "Will Smith, Jared Leto, Margot Robbie, Viola Davis",
             "year": 2016,
             "runtime": 123,
-            "rating": 6.2,
-            "votes": 393727,
-            "revenue": 325.02,
-            "metascore": 40
+            "rating": 6.2
         },
         {
-            "id": "5d1016adba4a3f1a98c21a7b",
             "title": "Mindhorn",
             "genre": [
                 "Comedy"
             ],
             "description": "A has-been actor best known for playing the title character in the 1980s detective series \"Mindhorn\" must work with the police when a serial killer says that he will only speak with Detective Mindhorn, whom he believes to be a real person.",
-            "director": "Sean Foley",
-            "actors": "Essie Davis, Andrea Riseborough, Julian Barratt,Kenneth Branagh",
             "year": 2016,
             "runtime": 89,
-            "rating": 6.4,
-            "votes": 2490,
-            "revenue": null,
-            "metascore": 71
+            "rating": 6.4
         },
         {
-            "id": "5d1016adba4a3f1a98c21a7d",
             "title": "Passengers",
             "genre": [
                 "Adventure",
@@ -83,17 +64,11 @@ sample response payload:
                 "Romance"
             ],
             "description": "A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passengers are awakened 90 years early.",
-            "director": "Morten Tyldum",
-            "actors": "Jennifer Lawrence, Chris Pratt, Michael Sheen,Laurence Fishburne",
             "year": 2016,
             "runtime": 116,
-            "rating": 7,
-            "votes": 192177,
-            "revenue": 100.01,
-            "metascore": 41
+            "rating": 7
         },
         {
-            "id": "5d1016adba4a3f1a98c21a7c",
             "title": "The Lost City of Z",
             "genre": [
                 "Action",
@@ -101,17 +76,11 @@ sample response payload:
                 "Biography"
             ],
             "description": "A true-life drama, centering on British explorer Col. Percival Fawcett, who disappeared while searching for a mysterious city in the Amazon in the 1920s.",
-            "director": "James Gray",
-            "actors": "Charlie Hunnam, Robert Pattinson, Sienna Miller, Tom Holland",
             "year": 2016,
             "runtime": 141,
-            "rating": 7.1,
-            "votes": 7188,
-            "revenue": 8.01,
-            "metascore": 78
+            "rating": 7.1
         },
         {
-            "id": "5d1016adba4a3f1a98c21a77",
             "title": "Sing",
             "genre": [
                 "Animation",
@@ -119,34 +88,22 @@ sample response payload:
                 "Family"
             ],
             "description": "In a city of humanoid animals, a hustling theater impresario's attempt to save his theater with a singing competition becomes grander than he anticipates even as its finalists' find that their lives will never be the same.",
-            "director": "Christophe Lourdelet",
-            "actors": "Matthew McConaughey,Reese Witherspoon, Seth MacFarlane, Scarlett Johansson",
             "year": 2016,
             "runtime": 108,
-            "rating": 7.2,
-            "votes": 60545,
-            "revenue": 270.32,
-            "metascore": 59
+            "rating": 7.2
         },
         {
-            "id": "5d1016adba4a3f1a98c21a76",
             "title": "Split",
             "genre": [
                 "Horror",
                 "Thriller"
             ],
             "description": "Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.",
-            "director": "M. Night Shyamalan",
-            "actors": "James McAvoy, Anya Taylor-Joy, Haley Lu Richardson, Jessica Sula",
             "year": 2016,
             "runtime": 117,
-            "rating": 7.3,
-            "votes": 157606,
-            "revenue": 138.12,
-            "metascore": 62
+            "rating": 7.3
         },
         {
-            "id": "5d1016adba4a3f1a98c21a7a",
             "title": "La La Land",
             "genre": [
                 "Comedy",
@@ -154,14 +111,9 @@ sample response payload:
                 "Music"
             ],
             "description": "A jazz pianist falls for an aspiring actress in Los Angeles.",
-            "director": "Damien Chazelle",
-            "actors": "Ryan Gosling, Emma Stone, Rosemarie DeWitt, J.K. Simmons",
             "year": 2016,
             "runtime": 128,
-            "rating": 8.3,
-            "votes": 258682,
-            "revenue": 151.06,
-            "metascore": 93
+            "rating": 8.3
         }
     ]
 }
