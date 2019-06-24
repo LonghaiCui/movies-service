@@ -11,7 +11,7 @@ public class DataLoaderTest {
     @Test
     public void testLoadData() throws Exception {
 
-        DataLoader dataLoader = new DataLoader();
+//        DataLoader dataLoader = new DataLoader();
 //        String str = dataLoader.readAllExample();
 
 

@@ -1,0 +1,104 @@
+As a client to the movies service
+I want to be able to search the movies by year from the service
+so that I can get the movie list of specific year or a range of years
+
+AC1
+Given a GET request is received in /movies endpoint
+When the queryString is year and the value is valid (from 1900 to 2100)
+Then the service should return the movie list in that year
+
+AC2
+Given a GET request is received in /movies endpoint
+When the queryString is year and the value is not valid (before 1900 or after 2100)
+Then the service should return error response with 400 status code
+
+AC3
+Given a GET request is received in /movies endpoint
+When the queryStrings are "from" and "to"
+And the values are valid ("from" is bigger than 1900 and "to" is smaller than 2100)
+Then the service should return the movie list between that years
+
+AC4
+Given a GET request is received in /movies endpoint
+When the queryStrings both "from" and "to" are present
+And the values are not valid ("from" is smaller than 1900 or "to" is bigger than 2100)
+Then the service should return error response with 400 status code
+
+AC5
+Given a GET request is received in /movies endpoint
+When only one of "from" and "to" is present
+Then the service should return error response with 400 status code
+
+AC6
+Given a GET request is received in /movies endpoint
+When the queryStrings "from" is bigger than "to"
+Then the service should return error response with 400 status code
+
+AC7
+Given a GET request is received in /movies endpoint
+When the none of the queryString "year", "from" or "to" is present
+Then the service should return the movie lists in default year 2016
+
+sample request:
+http://localhost:8080/movies?from=2015&to=2017
+
+sample response:
+{
+    "message": [
+        "3 movies found."
+    ],
+    "movies": [
+        {
+            "id": "5d1016adba4a3f1a98c21a7b",
+            "title": "Mindhorn",
+            "genre": [
+                "Comedy"
+            ],
+            "description": "A has-been actor best known for playing the title character in the 1980s detective series \"Mindhorn\" must work with the police when a serial killer says that he will only speak with Detective Mindhorn, whom he believes to be a real person.",
+            "director": "Sean Foley",
+            "actors": "Essie Davis, Andrea Riseborough, Julian Barratt,Kenneth Branagh",
+            "year": 2016,
+            "runtime": 89,
+            "rating": 6.4,
+            "votes": 2490,
+            "revenue": null,
+            "metascore": 71
+        },
+        {
+            "id": "5d1016adba4a3f1a98c21a77",
+            "title": "Sing",
+            "genre": [
+                "Animation",
+                "Comedy",
+                "Family"
+            ],
+            "description": "In a city of humanoid animals, a hustling theater impresario's attempt to save his theater with a singing competition becomes grander than he anticipates even as its finalists' find that their lives will never be the same.",
+            "director": "Christophe Lourdelet",
+            "actors": "Matthew McConaughey,Reese Witherspoon, Seth MacFarlane, Scarlett Johansson",
+            "year": 2016,
+            "runtime": 108,
+            "rating": 7.2,
+            "votes": 60545,
+            "revenue": 270.32,
+            "metascore": 59
+        },
+        {
+            "id": "5d1016adba4a3f1a98c21a7a",
+            "title": "La La Land",
+            "genre": [
+                "Comedy",
+                "Drama",
+                "Music"
+            ],
+            "description": "A jazz pianist falls for an aspiring actress in Los Angeles.",
+            "director": "Damien Chazelle",
+            "actors": "Ryan Gosling, Emma Stone, Rosemarie DeWitt, J.K. Simmons",
+            "year": 2016,
+            "runtime": 128,
+            "rating": 8.3,
+            "votes": 258682,
+            "revenue": 151.06,
+            "metascore": 93
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+As a client to the movies service
+I want to be able to load the movie data in csv format into the movie service
+so that I can get the movie list later
+
+AC1
+Given a POST request is received in /csv endpoint
+When the query parameter fileName is present and not null
+And data load is successful
+Then the service should load the movie data from resource/csv/fileName.csv into dongodb movie collection
+
+AC2
+Given a POST request is received in /csv endpoint
+When the query parameter fileName is not present or null
+Then the service should return 400 HTTP status code
+
+AC3
+Given a POST request is received in /csv endpoint
+When the query parameter fileName is present and not null
+And data load is unsuccessful
+Then the service should return 500 HTTP status code
+
+sample request:
+http://localhost:8080/csv?fileName=movieList1
+
+sample response:
+"Successfully load the data"
