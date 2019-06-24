@@ -16,7 +16,6 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 
-
 @RestController
 @RequestMapping("/movies")
 public class MoviesController {

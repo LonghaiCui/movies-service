@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 @Configuration
 public class MongoConfig extends AbstractMongoConfiguration {
 
@@ -32,5 +35,13 @@ public class MongoConfig extends AbstractMongoConfiguration {
     @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapper();
+    }
+
+    @Value("${eventPublishExecutor.threadNumber}")
+    private int threadNum;
+
+    @Bean
+    Executor dataLoadExecutor() {
+        return Executors.newFixedThreadPool(threadNum);
     }
 }
