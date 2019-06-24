@@ -45,9 +45,33 @@ http://localhost:8080/movies?from=2015&to=2017
 sample response:
 {
     "message": [
-        "3 movies found."
+        "8 movies found."
     ],
     "movies": [
+        {
+            "title": "The Great Wall",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "description": "European mercenaries searching for black powder become embroiled in the defense of the Great Wall of China against a horde of monstrous creatures.",
+            "year": 2016,
+            "runtime": 103,
+            "rating": 6.1
+        },
+        {
+            "title": "Suicide Squad",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "description": "A secret government agency recruits some of the most dangerous incarcerated super-villains to form a defensive task force. Their first mission: save the world from the apocalypse.",
+            "year": 2016,
+            "runtime": 123,
+            "rating": 6.2
+        },
         {
             "title": "Mindhorn",
             "genre": [
@@ -57,6 +81,30 @@ sample response:
             "year": 2016,
             "runtime": 89,
             "rating": 6.4
+        },
+        {
+            "title": "Passengers",
+            "genre": [
+                "Adventure",
+                "Drama",
+                "Romance"
+            ],
+            "description": "A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passengers are awakened 90 years early.",
+            "year": 2016,
+            "runtime": 116,
+            "rating": 7
+        },
+        {
+            "title": "The Lost City of Z",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Biography"
+            ],
+            "description": "A true-life drama, centering on British explorer Col. Percival Fawcett, who disappeared while searching for a mysterious city in the Amazon in the 1920s.",
+            "year": 2016,
+            "runtime": 141,
+            "rating": 7.1
         },
         {
             "title": "Sing",
@@ -69,6 +117,17 @@ sample response:
             "year": 2016,
             "runtime": 108,
             "rating": 7.2
+        },
+        {
+            "title": "Split",
+            "genre": [
+                "Horror",
+                "Thriller"
+            ],
+            "description": "Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.",
+            "year": 2016,
+            "runtime": 117,
+            "rating": 7.3
         },
         {
             "title": "La La Land",
