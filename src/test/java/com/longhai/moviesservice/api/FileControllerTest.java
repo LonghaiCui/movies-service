@@ -1,5 +1,6 @@
 package com.longhai.moviesservice.api;
 
+import com.longhai.moviesservice.event.EventPublisher;
 import com.longhai.moviesservice.processor.DataLoader;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,8 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.util.Collections;
-
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,13 +22,11 @@ public class FileControllerTest {
     private MockMvc mvc;
 
     @Mock
-    private DataLoader dataLoader;
+    private EventPublisher eventPublisher;
 
     @Before
     public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new FileController(dataLoader)).build();
-        when(dataLoader.loadData("abd"))
-                .thenReturn(Collections.emptyList());
+        mvc = MockMvcBuilders.standaloneSetup(new FileController(eventPublisher)).build();
     }
 
     @Test
@@ -41,9 +38,10 @@ public class FileControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk());
 
-        verify(dataLoader).loadData("abc");
+        verify(eventPublisher).publishEvent(any());
     }
 
+    /*
     @Test
     public void testLoadMovies_whenFileNameIsMissing_return400() throws Exception {
 
@@ -66,5 +64,6 @@ public class FileControllerTest {
 
         verifyZeroInteractions(dataLoader);
     }
+    */
 
 }
