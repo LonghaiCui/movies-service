@@ -4,6 +4,7 @@ This is a Spring boot rest micro service which does the following,
 2. query the movie list based on year and genre
 
 Database Setup
+    Option A: if you don't have docker installed,
     1. Install mongodb and give permission to mongodb data location
     Run the following linux command in terminal
         brew install mongodb
@@ -15,6 +16,9 @@ Database Setup
         use dev
         db.movie.drop()
         db.movie.createIndex( { title: 1, director: 1 }, { unique: true } )
+    Option B:  if you have docker installed locally
+    Run the following command, it will download the my public docker image longhai/my-first-repo:mongo which has mongodb installed
+    ./gradlew startDockerDB
 
 Run the app
     1. build the project

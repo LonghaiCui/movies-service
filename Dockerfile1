@@ -1,0 +1,12 @@
+FROM openjdk:8-jdk-alpine
+RUN apk update
+RUN apk add mongodb=4.0.5-r0
+RUN mkdir -p /data/db
+RUN chmod 0755 /data/db
+
+RUN mongod --fork --logpath /var/log/mongodb.log
+VOLUME /tmp
+COPY build/libs/movies-service.jar app.jar
+EXPOSE 8080
+CMD echo "Hello world! This is my first Docker image."
+ENTRYPOINT ["java", "-jar", "/app.jar"]

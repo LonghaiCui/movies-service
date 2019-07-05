@@ -1,0 +1,7 @@
+FROM openjdk:8-jdk-alpine
+RUN apk update
+RUN apk add mongodb=4.0.5-r0
+RUN mkdir -p /data/db
+RUN chmod 0755 /data/db
+
+RUN mongod
