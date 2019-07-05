@@ -23,7 +23,9 @@ dependencies {
 			"org.springframework.boot:spring-boot-starter-data-mongodb",
 			"com.opencsv:opencsv:4.0",
 			"org.springframework.boot:spring-boot-starter-web",
-			"org.projectlombok:lombok"
+			"org.projectlombok:lombok",
+			"io.springfox:springfox-swagger-ui:2.8.0",
+			"io.springfox:springfox-swagger2:2.8.0"
 	)
 	testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
 
